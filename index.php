@@ -50,7 +50,7 @@ foreach($categories as $cat) {
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $post['title'] ?></h5>
                             <p class="card-text"><?php echo $post['text'] ?></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="/view_post.php?post_id=<?php echo $post['id'] ?>" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
