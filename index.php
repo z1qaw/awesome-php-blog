@@ -51,7 +51,9 @@ foreach($categories as $cat) {
     <div class="container mt-2">
         <?php foreach($categories_top_posts as $cat): ?>
             <div class="category_block mt-5">
-                <h2><?php echo $cat['category']['title'] ?></h2>
+                <a href="/category_details.php?category_id=<?php echo $cat['category']['id'] ?>" class="text-decoration-none">
+                    <h2><?php echo $cat['category']['title'] ?></h2>
+                </a>
                 <p class="text-muted text-uppercase fw-light">Последниe посты</p>
                 <div class="row">
                 <?php foreach($cat['posts'] as $post): ?>
