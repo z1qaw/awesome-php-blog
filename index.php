@@ -40,24 +40,48 @@ foreach($categories as $cat) {
     <script>
         navbarSetActiveButton('home_link')
     </script>
+
+    <div class="mt-4 mb-5 container">
+        <h1 class="mb-3 font-monospace">My Awesome Blog</h1>
+        <p class="fst-italic">This is my simple PHP blog engine.</p>
+        <button type="button" class="btn btn-dark">Get on GitHub</button>
+    </div>
+    
+    <hr>
+
     <div class="container mt-2">
         <?php foreach($categories_top_posts as $cat): ?>
-            <h2><?php echo $cat['category']['title'] ?></h2>
-            <div class="row">
-            <?php foreach($cat['posts'] as $post): ?>
-                <div class="col-sm-3">
-                    <div class="card mt-2">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post['title'] ?></h5>
-                            <p class="card-text"><?php echo $post['text'] ?></p>
-                            <a href="/view_post.php?post_id=<?php echo $post['id'] ?>" class="btn btn-primary">Go somewhere</a>
+            <div class="category_block mt-5">
+                <h2><?php echo $cat['category']['title'] ?></h2>
+                <p class="text-muted text-uppercase fw-light">Последниe посты</p>
+                <div class="row">
+                <?php foreach($cat['posts'] as $post): ?>
+                    <div class="col-sm-6">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $post['title'] ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted fw-light"><?php echo $post['pubdate'] ?></h6>
+                                <p class="card-text"><?php echo substr($post['text'], 0, 120) . ' ...' ?></p>
+                                <a href="/view_post.php?post_id=<?php echo $post['id'] ?>" class="btn btn-primary">Go to post</a>
+                            </div>
                         </div>
                     </div>
+                <?php endforeach; ?> 
                 </div>
-            <?php endforeach; ?> 
             </div>
         <?php endforeach; ?>
-        <hr>
     </div>
+
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2021 Company, Inc</p>
+  </footer>
+
 </body>
 </html>
