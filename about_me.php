@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+<head>
     <?php include 'components/base_head.php' ?>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
     <?php include 'components/navbar.php' ?>
     <script src='js/navbar.js'></script>
