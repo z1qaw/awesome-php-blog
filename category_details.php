@@ -36,6 +36,11 @@ $category = array(
 </head>
 <body>
     <?php include 'components/navbar.php' ?>
+    <script src='js/navbar.js'></script>
+    <script>
+        navbarSetActiveButton('categories_link')
+    </script>
+
     <div class="container">
         <?php if($category_posts): ?>
             <h1 class="mt-4"><?php echo $category['title'] ?></h1>
