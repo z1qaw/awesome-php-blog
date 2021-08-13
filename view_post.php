@@ -11,11 +11,11 @@ $post_query = null;
 ?>
 
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <?php include 'components/base_head.php' ?>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+<html lang="en">
+<head>
+    <?php include 'components/base_head.php' ?>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
     <?php include 'components/navbar.php' ?>
     <div class="container">
@@ -31,4 +31,5 @@ $post_query = null;
             <p>Пост не найден. Попробуйте воспользоваться поиском.</p>
         <?php endif; ?>
     </div>
+    <?php include 'components/footer.php' ?>
 </body>

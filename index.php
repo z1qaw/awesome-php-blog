@@ -29,11 +29,11 @@ foreach($categories as $cat) {
 ?>
 
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <?php include 'components/base_head.php' ?>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+<html lang="en">
+<head>
+    <?php include 'components/base_head.php' ?>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
     <?php include 'components/navbar.php' ?>
     <script src='js/navbar.js'></script>
@@ -41,13 +41,12 @@ foreach($categories as $cat) {
         navbarSetActiveButton('home_link')
     </script>
 
-    <div class="mt-4 mb-5 container">
-        <h1 class="mb-3 font-monospace">My Awesome Blog</h1>
-        <p class="fst-italic">This is my simple PHP blog engine.</p>
-        <button type="button" class="btn btn-dark">Get on GitHub</button>
+
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">My Awesome Blog</h1>
+      <p class="lead fw-normal">This is my simple PHP blog engine.</p>
+      <a class="btn btn-outline-dark" href="#">Get on GitHub</a>
     </div>
-    
-    <hr>
 
     <div class="container mt-2">
         <?php foreach($categories_top_posts as $cat): ?>
@@ -72,16 +71,7 @@ foreach($categories as $cat) {
         <?php endforeach; ?>
     </div>
 
-  <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-    <p class="text-center text-muted">© 2021 Company, Inc</p>
-  </footer>
+  <?php include 'components/footer.php' ?>
 
 </body>
 </html>
