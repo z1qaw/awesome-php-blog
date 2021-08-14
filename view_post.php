@@ -4,9 +4,13 @@ include 'services/db.php';
 $db = OpenCon();
 
 $post_id = $_GET['post_id'];
-$post_query = $db->query('SELECT * FROM posts WHERE id = ' . (int) $post_id);
-$post = $post_query->fetch();
-$post_query = null;
+if (is_numeric($post_id)) {
+    $post_query = $db->query('SELECT * FROM posts WHERE id = ' . (int) $post_id);
+    $post = $post_query->fetch();
+    $post_query = null;
+} else {
+    $post = null;
+}
 
 ?>
 
@@ -22,8 +26,8 @@ $post_query = null;
         <?php if($post): ?>
             <div class="row">
                 <div class="col-md-8" id="post_body">
-                    <h1 class="mt-5"><?php echo $post['title'] ?></h1>
-                    <p class="mt-3"><?php echo $post['text'] ?></p>
+                    <h1 class="mt-5"><?=$post['title']?></h1>
+                    <p class="mt-3"><?=$post['text']?></p>
                 </div>
             </div>
         <?php else: ?>

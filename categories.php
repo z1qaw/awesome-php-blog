@@ -34,13 +34,13 @@ $categories = $db->query($raw_query)->fetchAll();
         <h1 class="mt-4">Категории</h1>
         <ol class="list-group list-group-numbered mt-4">
             <?php foreach($categories as $category): ?>
-                <a href="/category_details.php?category_id=<?php echo $category['id'] ?>"  class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                <a href="/category_details.php?category_id=<?=$category['id']?>"  class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
                     <div class="ms-2 me-auto">
-                    <div class="fw-bold"><?php echo $category['title'] ?></div>
-                    <?php echo $category['description'] ?>
+                    <div class="fw-bold"><?=$category['title']?></div>
+                    <?=$category['description']?>
                     </div>
                     <span class="badge bg-primary rounded-pill">
-                        <?php echo $category['posts_count'] ?> постов
+                        <?=$category['posts_count']?> постов
                     </span>
                 </a>
             <?php endforeach; ?>
