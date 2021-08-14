@@ -55,16 +55,7 @@ foreach($categories as $cat) {
                 <p class="text-muted text-uppercase fw-light">Последниe посты</p>
                 <div class="row">
                 <?php foreach($cat['posts'] as $post): ?>
-                    <div class="col-sm-6">
-                        <div class="card mt-2">
-                            <div class="card-body">
-                                <h5 class="card-title"><?=$post['title']?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted fw-light"><?=$post['pubdate']?></h6>
-                                <p class="card-text"><?=substr($post['text'], 0, 120).' ...'?></p>
-                                <a href="/view_post.php?post_id=<?=$post['id']?>" class="btn btn-primary">Go to post</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php require 'components/post_card.php' ?>
                 <?php endforeach; ?> 
                 </div>
             </div>
