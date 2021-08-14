@@ -1,6 +1,6 @@
 <?php 
 
-include 'services/db.php';
+require 'services/db.php';
 $db = OpenCon();
 
 $category_id = $_GET['category_id'];
@@ -35,11 +35,11 @@ if (is_numeric($category_id)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'components/base_head.php' ?>
+    <?php require 'components/base_head.php' ?>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <?php include 'components/navbar.php' ?>
+    <?php require 'components/navbar.php' ?>
     <script src='js/navbar.js'></script>
     <script>
         navbarSetActiveButton('categories_link')
@@ -74,5 +74,6 @@ if (is_numeric($category_id)) {
             <p>Категория не найдена. <a href="/" class="text-reset">Перейти на главную.</a></p>
         <?php endif; ?>
     </div>
-    <?php include 'components/footer.php' ?>
+    <?php require 'components/footer.php' ?>
+    <?php require 'components/base_scripts.php' ?>
 </body>

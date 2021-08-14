@@ -1,6 +1,6 @@
 <?php 
-
-include 'services/db.php';
+require_once 'config.php';
+require_once 'services/db.php';
 $db = OpenCon();
 
 $raw_query = "SELECT
@@ -19,11 +19,11 @@ $categories = $db->query($raw_query)->fetchAll();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'components/base_head.php' ?>
+    <?php require 'components/base_head.php' ?>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <?php include 'components/navbar.php' ?>
+    <?php require 'components/navbar.php' ?>
 
     <script src='js/navbar.js'></script>
     <script>
@@ -46,5 +46,7 @@ $categories = $db->query($raw_query)->fetchAll();
             <?php endforeach; ?>
         </ol>
     </div>
-    <?php include 'components/footer.php' ?>
+
+    <?php require 'components/footer.php' ?>
+    <?php require 'components/base_scripts.php' ?>
 </body>
