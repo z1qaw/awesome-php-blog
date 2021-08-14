@@ -1,5 +1,3 @@
-<?php require_once './config.php'; ?>
-
 <!DOCTYPE html>
 <head>
     <?php require 'components/base_head.php' ?>

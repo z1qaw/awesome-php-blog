@@ -1,6 +1,5 @@
 <?php 
 
-require_once 'config.php';
 require 'services/db.php';
 $db = OpenCon();
 

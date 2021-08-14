@@ -56,9 +56,7 @@ if (is_numeric($category_id)) {
             <h1 class="mt-2"><?=$category['title'] ?></h1>
             <p class="text-muted text-uppercase fw-light">Все посты</p>
             <?php foreach($category_posts as $post): ?>
-                <div class="col-sm-6">
-                    <?php require 'components/post_card.php' ?>
-                </div>
+                <?php require 'components/post_card.php' ?>
             <?php endforeach; ?>
         <?php else: ?>
             <h1 class="mt-5">404  :(</h1>
