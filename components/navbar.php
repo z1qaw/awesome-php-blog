@@ -7,7 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li id="home_link" class="nav-item">
           <a class="nav-link" aria-current="page" href="/">Home</a>
         </li>
@@ -18,6 +18,17 @@
           <a class="nav-link" href="/categories.php">Categories</a>
         </li>
       </ul>
-    </div>
+      <ul class="navbar-nav">
+        <span class="navbar-text">
+          Current user: <?=$user['uid']?> 
+          (<?php echo $user['is_anon'] ? 'Anon' : $user['username'] ?>)
+        </span>
+        <li id="login_link" class="nav-item">
+          <a class="nav-link" href="/login.php">Login</a>
+        </li>
+        <li id="signup_link" class="nav-item">
+          <a class="nav-link" href="/sign_up.php">Signup</a>
+        </li>
+      </ul>
   </div>
 </nav>
