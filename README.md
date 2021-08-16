@@ -33,7 +33,7 @@ Just my simple PHP blog engine that I'm writing based on my increasing PHP skill
 - Просмотр постов в отдельной категории
 - Автоматическое создание сессии для незарегистрированных пользователей
 
-## TODO (EN)
+## TODO (RU)
 
 - CRUD для всех моделей (Session, User, Post, PostComment, Category)
 - Возможность перевода, основываясь на системном языке пользователя и его выбора на странице настроек
