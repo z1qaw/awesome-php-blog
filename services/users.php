@@ -92,6 +92,24 @@ function make_anon_user_session() {
     setcookie('Session', $session['token'], time()+60*60*24*30);
 }
 
+
+function login(string $username, string $password, bool $remember_password) {
+    global $db;
+
+    $hashed_password = hash_password($password);
+    $query = "
+        SELECT id, uid FROM users WHERE username = \"$username\" and password = \"$hashed_password\" LIMIT 1;
+    ";
+    $found_user = $db->query($query)->fetch();
+    if (!isset($found_user)) {
+        throw new ErrorException('Username or password is not correct.');
+    }
+    $session = create_session($found_user['uid']);
+    $cookie_expire_time = $remember_password ? time()+60*60*24*30 : 0;
+    setcookie('Session', $session['token'], $cookie_expire_time);
+}
+
+
 if (!isset($_COOKIE['Session'])) {
     make_anon_user_session();
 } else {
