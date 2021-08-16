@@ -1,6 +1,8 @@
 <?php 
 
-require 'services/db.php';
+require_once 'services/db.php';
+require_once 'services/users.php';
+
 $db = OpenCon();
 
 $categories = $db->query('SELECT * FROM categories;')->fetchAll();

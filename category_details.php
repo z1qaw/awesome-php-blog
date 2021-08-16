@@ -1,6 +1,8 @@
 <?php 
 
-require 'services/db.php';
+require_once 'services/db.php';
+require_once 'services/users.php';
+
 $db = OpenCon();
 
 $category_id = $_GET['category_id'];
@@ -12,7 +14,7 @@ if (is_numeric($category_id)) {
             categories.description as category_description,
             categories.tag as category_tag,
             posts.title as title,
-            posts.text as text,
+            posts.text as `text`,
             posts.pubdate as pubdate,
             posts.author_id as author_id
         FROM categories JOIN posts ON categories.id = posts.category_id 

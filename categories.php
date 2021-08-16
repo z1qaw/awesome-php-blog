@@ -1,5 +1,8 @@
 <?php 
+
 require_once 'services/db.php';
+require_once 'services/users.php';
+
 $db = OpenCon();
 
 $raw_query = "SELECT

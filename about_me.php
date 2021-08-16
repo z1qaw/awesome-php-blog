@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'services/db.php';
+require_once 'services/users.php';
+
+$db = OpenCon();
+
+?>
+
 <!DOCTYPE html>
 <head>
     <?php require 'components/base_head.php' ?>
